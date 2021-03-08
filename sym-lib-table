@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name weather)(type Legacy)(uri ${KIPRJMOD}/weather.lib)(options "")(descr ""))
+  (lib (name VXO7805-500-M)(type Legacy)(uri ${KIPRJMOD}/VXO7805-500-M.lib)(options "")(descr ""))
+)

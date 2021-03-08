@@ -1,0 +1,13 @@
+#+TITLE: firmware: network of CO2 sensors
+* commands used to flash device
+esptool.py --port /dev/ttyUSB0 erase_flash
+esptool.py -p /dev/ttyUSB0 --baud 450800 --chip esp8266 write_flash 0x00000 esp8266-20191220-v1.12.bin
+(use rshell to upload main.py, settings.py)
+./flash.sh
+* commands used to read from sensor
+i2c=I2C(scl=Pin(4), sda={␛[␛[KPin(5), freq=10000)
+i2c.writeto(104, "\x22\x00\x08\x2A".encode())
+i2c.readfrom(104, 4)
+* commands used to interact with device
+conda activate micropython
+rshell
