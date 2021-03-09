@@ -1,6 +1,7 @@
 import settings
 
 import sys
+import machine
 from machine import Pin, I2C, WDT
 import network
 import time
@@ -23,7 +24,6 @@ class BME680(HomieNode):
 
     def __init__(self, name="bme680", device=None):
         super().__init__(id="bme680", name=name, type="sensor")
-        self.wdt = WDT()
         self.device = device
         self.i2c = I2C(scl=Pin(5), sda=Pin(4))
         self.bme680 = BME680_I2C(i2c=self.i2c)
@@ -80,8 +80,14 @@ class BME680(HomieNode):
         self.start = time.time()
 
     async def update_data(self):
-        while True:
+        # wait until connected
+        for _ in range(60):
+            await sleep_ms(1_000)
             if self.device.mqtt.isconnected():
+                break
+        # loop forever
+        while True:
+            while self.device.mqtt.isconnected():
                 self.last_online = time.time()
                 self.online_led.on()
                 self.led.value(0)  # illuminate onboard LED
@@ -91,14 +97,16 @@ class BME680(HomieNode):
                 self.gas.data = str(self.bme680.gas)
                 self.uptime.data = self.get_uptime()
                 self.led.value(1)  # onboard LED off
-                for _ in range(15):
-                    self.wdt.feed()
-                    await sleep_ms(1000)
-            else:
+                await sleep_ms(15_000)
+            while not self.device.mqtt.isconnected():
+                if time.time() - self.last_online > 300:   # 5 minutes
+                    machine.reset()
                 self.online_led.off()
-                if time.time() - self.last_online < 60:
-                    self.wdt.feed()
+                self.led.value(0)  # illuminate onboard LED
+                await sleep_ms(100)
+                self.led.value(1)  # onboard LED off
                 await sleep_ms(1000)
+            machine.reset()  # if lost connection, restart
 
     def get_uptime(self):
         diff = int(time.time() - self.start)
