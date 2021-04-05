@@ -11,7 +11,7 @@ import mqtt_as
 mqtt_as.MQTT_base.DEBUG = True
 
 
-from bme680 import *
+from bme280 import BME280
 
 from homie.constants import FALSE, TRUE, BOOLEAN, FLOAT, STRING
 from homie.device import HomieDevice
@@ -20,13 +20,13 @@ from homie.property import HomieNodeProperty
 
 from uasyncio import get_event_loop, sleep_ms
 
-class BME680(HomieNode):
+class WeatherSensor(HomieNode):
 
-    def __init__(self, name="bme680", device=None):
-        super().__init__(id="bme680", name=name, type="sensor")
+    def __init__(self, name="bme280", device=None):
+        super().__init__(id="bme280", name=name, type="sensor")
         self.device = device
         self.i2c = I2C(scl=Pin(5), sda=Pin(4))
-        self.bme680 = BME680_I2C(i2c=self.i2c)
+        self.bme280 = BME280(i2c=self.i2c)
         self.temperature = HomieNodeProperty(
             id="temperature",
             name="temperature",
@@ -54,15 +54,6 @@ class BME680(HomieNode):
             default=0,
         )
         self.add_property(self.pressure)
-        self.gas = HomieNodeProperty(
-            id="voc",
-            name="voc",
-            unit="ohm",
-            settable=False,
-            datatype=FLOAT,
-            default=0,
-        )
-        self.add_property(self.gas)
         self.uptime = HomieNodeProperty(
             id="uptime",
             name="uptime",
@@ -91,10 +82,9 @@ class BME680(HomieNode):
                 self.last_online = time.time()
                 self.online_led.on()
                 self.led.value(0)  # illuminate onboard LED
-                self.temperature.data = str(self.bme680.temperature)
-                self.humidity.data = str(self.bme680.humidity)
-                self.pressure.data = str(self.bme680.pressure)
-                self.gas.data = str(self.bme680.gas)
+                self.temperature.data = str(self.bme280.temperature)
+                self.humidity.data = str(self.bme280.humidity)
+                self.pressure.data = str(self.bme280.pressure)
                 self.uptime.data = self.get_uptime()
                 self.led.value(1)  # onboard LED off
                 await sleep_ms(15_000)
@@ -127,7 +117,7 @@ def main():
     # homie
     print("homie main")
     homie = HomieDevice(settings)
-    homie.add_node(BME680(device=homie))
+    homie.add_node(WeatherSensor(device=homie))
     homie.run_forever()
 
 if __name__ == "__main__":
