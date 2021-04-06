@@ -23,9 +23,8 @@ This PCB was designed using KiCAD version 5.
 Refer to `weather.pdf` for schematic.
 PCB images generated with [tracespace](https://github.com/tracespace/tracespace) follow.
 
-![top](./top.png "PCB top view")
-
-![bottom](./bottom.png "PCB bottom view")
+<img src="./weather-.top.svg" width="100%"/>
+<img src="./weather-.bottom.svg" width="100%"/>
 
 ## Bill of Materials
 
