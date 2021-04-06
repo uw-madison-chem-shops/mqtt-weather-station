@@ -4,6 +4,19 @@ Simple station for monitoring environmental conditions in the lab over MQTT.
 
 Designed to work with [mqtt.chem.wisc.edu](https://mqtt.chem.wisc.edu/).
 
+## Repository
+
+This is an open source hardware project licensed under the CERN Open Hardware Licence Version 2 - Permissive.
+Please see the LICENSE file for the complete license.
+
+This repository is being mirrored to several version control systems in an attempt to ensure maximum avaliability.
+
+| name           | url                                                           |
+| -------------- | ------------------------------------------------------------- |
+| Chem (primary) | https://git.chem.wisc.edu/shop/mqtt-weather-station           |
+| GitHub         | https://github.com/uw-madison-chem-shops/mqtt-weather-station |
+| GitLab         | https://gitlab.com/uw-madison-chem-shops/mqtt-weather-station |
+
 ## PCB
 
 This PCB was designed using KiCAD version 5.
@@ -14,7 +27,7 @@ PCB images generated with [tracespace](https://github.com/tracespace/tracespace)
 
 ![bottom](./bottom.png "PCB bottom view")
 
-Bill of Materials
+## Bill of Materials
 
 | reference      | value            | manufacturer     | part number          | price  | vendors |
 | :------------- | :--------------- | :--------------- | :------------------- | :----- | :------ |
