@@ -272,7 +272,7 @@ class BME280:
   def pressure(self):
     "Return the temperature in Pa."
     p = self.read_pressure() // 256
-    p *= 1000  # uPa to Pa
+    p *= 100  # to Pa
     pi = p // 100
     pd = p - pi * 100
     return "{}.{:02d}".format(pi, pd)

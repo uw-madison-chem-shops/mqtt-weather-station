@@ -5,7 +5,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "MQTT Weather Station"
-Date "2021-04-07"
+Date "2021-04-12"
 Rev "B"
 Comp "University of Wisconsin-Madison"
 Comment1 "Department of Chemistry"
@@ -137,17 +137,6 @@ F 1 "GND" H 1505 5527 50  0000 C CNN
 F 2 "" H 1500 5700 50  0001 C CNN
 F 3 "" H 1500 5700 50  0001 C CNN
 	1    1500 5700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_FET:2N7000 Q1
-U 1 1 5FCC5563
-P 9200 4000
-F 0 "Q1" H 9404 4046 50  0000 L CNN
-F 1 "2N7000" H 9404 3955 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 9400 3925 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF" H 9200 4000 50  0001 L CNN
-	1    9200 4000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -491,9 +480,6 @@ Wire Wire Line
 	2150 1800 1150 1800
 Wire Wire Line
 	1150 1800 1150 2000
-Wire Wire Line
-	1150 2300 1500 2300
-Connection ~ 1500 2300
 NoConn ~ 2150 2300
 NoConn ~ 2150 2400
 NoConn ~ 2150 2500
@@ -541,17 +527,6 @@ F 3 "" H 2850 2300 50  0001 L BNN
 $EndComp
 Wire Wire Line
 	5250 3200 6650 3200
-$Comp
-L Transistor_FET:2N7000 Q2
-U 1 1 6080DD81
-P 4200 2600
-F 0 "Q2" H 4404 2646 50  0000 L CNN
-F 1 "2N7000" H 4404 2555 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4400 2525 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF" H 4200 2600 50  0001 L CNN
-	1    4200 2600
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R_US R7
 U 1 1 6081A7E5
@@ -628,7 +603,6 @@ Wire Wire Line
 	3550 2600 3900 2600
 Wire Wire Line
 	4300 2400 5250 2400
-Connection ~ 4300 2400
 Connection ~ 5250 2400
 Wire Wire Line
 	5250 2400 5250 3200
@@ -677,8 +651,6 @@ F 3 "" H 2650 3800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1850 2000 2150 2000
-Wire Wire Line
-	1500 2300 1850 2300
 $Comp
 L Device:R_US R6
 U 1 1 606F2EF9
@@ -691,4 +663,32 @@ F 3 "~" H 1850 2150 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 NoConn ~ 2150 2200
+$Comp
+L Device:Q_NMOS_GSD Q2
+U 1 1 607548BC
+P 4200 2600
+F 0 "Q2" H 4404 2646 50  0000 L CNN
+F 1 "2N7000" H 4404 2555 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 4400 2700 50  0001 C CNN
+F 3 "~" H 4200 2600 50  0001 C CNN
+	1    4200 2600
+	1    0    0    -1  
+$EndComp
+Connection ~ 4300 2400
+$Comp
+L Device:Q_NMOS_GSD Q1
+U 1 1 6075743A
+P 9200 4000
+F 0 "Q1" H 9404 4046 50  0000 L CNN
+F 1 "2N7000" H 9404 3955 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 9400 4100 50  0001 C CNN
+F 3 "~" H 9200 4000 50  0001 C CNN
+	1    9200 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 2300 1500 2300
+Connection ~ 1500 2300
+Wire Wire Line
+	1500 2300 1850 2300
 $EndSCHEMATC

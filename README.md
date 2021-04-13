@@ -53,6 +53,14 @@ Refer to the "firmware" directory in this repository for detailed instructions.
 
 ### Unprinted
 
+### B
+
+#### Added
+- new hour long reset timer based on CD4060BM96
+
+#### Changed
+- SOT23 packages for all discrete transistors
+
 ### A
 
 #### Added

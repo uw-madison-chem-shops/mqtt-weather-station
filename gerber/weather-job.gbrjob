@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "5.1.8+dfsg1-1+b1"
     },
-    "CreationDate":  "2020-12-29T15:19:21-06:00"
+    "CreationDate":  "2021-04-12T18:27:31-05:00"
   },
   "GeneralSpecs":
   {
@@ -15,7 +15,7 @@
     {
       "Name": "weather",
       "GUID": "77656174-6865-4722-9e6b-696361645f70",
-      "Revision": "1.1.0"
+      "Revision": "B"
     },
     "Size":
     {
