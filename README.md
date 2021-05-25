@@ -37,9 +37,18 @@ PCB images generated with [tracespace](https://github.com/tracespace/tracespace)
 | C1             | 100u             | Illinois Cap.    | 107KXM025M           | $0.25  | [DigiKey](https://www.digikey.com/en/products/detail/illinois-capacitor/107KXM025M/5410757?s=N4IgTCBcDaIIwAYDsBpAGgWQWArBkAugL5A) |
 | C2             | 10u              | Yageo            | CC1206KKX7R8BB106    | $0.25  | [DigiKey](https://www.digikey.com/en/products/detail/yageo/CC1206KKX7R8BB106/5195365?s=N4IgTCBcDaIMJwIxgAwDYDSGAaB2ASgBwBCxi6IAugL5A) |
 | C3             | 22u              | Yageo            | CC1206MKX7R7BB226    | $0.75  | [DigiKey](https://www.digikey.com/en/products/detail/yageo/CC1206MKX7R7BB226/7071713?s=N4IgTCBcDaIMJwIxgAwDYCyBpAGgdgCU8AhYsMNEAXQF8g) |
+| C4             | 1n               |
+| C5             | 1u               |
 | D1, D2         | red LED          | Lite-ON          | LTST-C230KRKT        | $0.50  | [DigiKey](https://www.digikey.com/en/products/detail/lite-on-inc/LTST-C230KRKT/386857?s=N4IgTCBcDaIDIBUDKCC0BhMBmADAaQCU8EQBdAXyA) |
+| J1             | barrel jack      |
+| PS1            | VXO7805-500-M    |
 | Q1, Q2         | MOSFET N-ENH     | Diodes Inc.      | 2N7002K-7            | $0.25  | [DigiKey](https://www.digikey.com/en/products/detail/diodes-incorporated/2N7002K-7/1934378?lang=en&s=N4IgTCBcDa4HIHYAMSwGkC0CQF0C%2BQA&site=us&x=17&y=13) [Mouser](https://www.mouser.com/ProductDetail/Diodes-Incorporated/2N7002K-7?qs=rGAXPo9uwV0%2Fp9r5KJ7huA%3D%3D) |
+| R1, R2         | 1k               |
+| R3, R4, R7, R8 | 4.7k             |
+| R5             | 470k             |
+| R6, R9         | 1                |
 | U1             | BME280 breakout  | Adafruit         | 2652                 | $20.00 | [Adafruit](https://www.adafruit.com/product/2652) [DigiKey]() |
+| U2             | counter          | TI               | CD4060BM96           | $0.50  |
 
 All prices are extended.
 Assuming an order of 10 PCBs, the boards themselves should cost around $5 each.

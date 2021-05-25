@@ -5,7 +5,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "MQTT Weather Station"
-Date "2021-04-12"
+Date "2021-05-25"
 Rev "B"
 Comp "University of Wisconsin-Madison"
 Comment1 "Department of Chemistry"
@@ -461,17 +461,6 @@ F 3 "~" H 1500 2150 50  0001 C CNN
 	1    1500 2150
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R_US R5
-U 1 1 606F2A08
-P 1150 2150
-F 0 "R5" H 1082 2104 50  0000 R CNN
-F 1 "100k" H 1082 2195 50  0000 R CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1190 2140 50  0001 C CNN
-F 3 "~" H 1150 2150 50  0001 C CNN
-	1    1150 2150
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	2150 1900 1500 1900
 Wire Wire Line
@@ -511,9 +500,7 @@ NoConn ~ 3550 2300
 NoConn ~ 3550 2400
 NoConn ~ 3550 2500
 Text Notes 1050 1450 0    50   ~ 0
-AUTO-RESET TIMER\n(ONCE PER HOUR)
-Text Notes 1150 2750 0    50   ~ 0
-T\n= 2.3 R5 C4\n= 0.23 seconds
+AUTO-RESET TIMER\n(ONCE EVERY 2.5 HOUR)
 $Comp
 L CD4060BM96:CD4060BM96 U2
 U 1 1 606E1341
@@ -691,4 +678,15 @@ Wire Wire Line
 Connection ~ 1500 2300
 Wire Wire Line
 	1500 2300 1850 2300
+$Comp
+L Device:R_US R5
+U 1 1 606F2A08
+P 1150 2150
+F 0 "R5" H 1082 2104 50  0000 R CNN
+F 1 "470k" H 1082 2195 50  0000 R CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1190 2140 50  0001 C CNN
+F 3 "~" H 1150 2150 50  0001 C CNN
+	1    1150 2150
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
