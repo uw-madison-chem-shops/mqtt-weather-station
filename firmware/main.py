@@ -62,33 +62,50 @@ class WeatherSensor(HomieNode):
             default="PT0S"
         )
         self.add_property(self.uptime)
-        loop = get_event_loop()
-        loop.create_task(self.update_data())
+        self.ip = HomieNodeProperty(
+            id="ip",
+            name="ip",
+            settable=False,
+            datatype=STRING,
+            default="",
+        )
+        self.add_property(self.ip)
         self.led = Pin(0, Pin.OUT)
         self.online_led = Pin(12, Pin.OUT)
         self.online_led.off()
         self.last_online = time.time()
         self.start = time.time()
+        print("start time", self.start)
+        loop = get_event_loop()
+        loop.create_task(self.update_data())
 
     async def update_data(self):
         # wait until connected
         for _ in range(60):
+            print("wait until connected")
             await sleep_ms(1_000)
             if self.device.mqtt.isconnected():
                 break
         # loop forever
         while True:
             while self.device.mqtt.isconnected():
+                print("update data")
+                print(network.WLAN().status())
                 self.last_online = time.time()
+                print(1)
                 self.online_led.on()
+                print(2)
                 self.led.value(0)  # illuminate onboard LED
                 self.temperature.data = str(self.bme280.temperature)
                 self.humidity.data = str(self.bme280.humidity)
                 self.pressure.data = str(self.bme280.pressure)
                 self.uptime.data = self.get_uptime()
+                self.ip.data = network.WLAN().ifconfig()[0]
                 self.led.value(1)  # onboard LED off
+                print("final")
                 await sleep_ms(15_000)
             while not self.device.mqtt.isconnected():
+                print("wait for reconnect")
                 if time.time() - self.last_online > 300:   # 5 minutes
                     machine.reset()
                 self.online_led.off()
