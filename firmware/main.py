@@ -86,6 +86,15 @@ class WeatherSensor(HomieNode):
             await sleep_ms(1_000)
             if self.device.mqtt.isconnected():
                 break
+        # do 5 measurements to "warm up" the sensor
+        #    for whatever reason the first measurements after poweron are systematically wrong
+        #    I do not understand why
+        #    --- Blaise 2021-07-30
+        for _ in range(5):
+            _ = self.bme280.temperature
+            _ = self.bme280.humidity
+            _ = self.bme280.pressure
+            await sleep_ms(500)
         # loop forever
         while True:
             while self.device.mqtt.isconnected():
