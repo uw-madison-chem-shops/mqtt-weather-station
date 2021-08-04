@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "MQTT Weather Station"
-Date "2021-05-25"
-Rev "B"
+Date "2021-08-04"
+Rev "WIP"
 Comp "University of Wisconsin-Madison"
 Comment1 "Department of Chemistry"
 Comment2 "Instrument Shop"
@@ -455,7 +455,7 @@ L Device:C C4
 U 1 1 606E9B06
 P 1500 2150
 F 0 "C4" H 1615 2196 50  0000 L CNN
-F 1 "1n" H 1615 2105 50  0000 L CNN
+F 1 "1u" H 1615 2105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" H 1538 2000 50  0001 C CNN
 F 3 "~" H 1500 2150 50  0001 C CNN
 	1    1500 2150
