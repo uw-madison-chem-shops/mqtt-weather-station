@@ -14,11 +14,12 @@ Please see the LICENSE file for the complete license.
 
 This repository is being mirrored to several version control systems in an attempt to ensure maximum avaliability.
 
-| name           | url                                                           |
-| -------------- | ------------------------------------------------------------- |
-| Chem (primary) | https://git.chem.wisc.edu/shop/mqtt-weather-station           |
-| GitHub         | https://github.com/uw-madison-chem-shops/mqtt-weather-station |
-| GitLab         | https://gitlab.com/uw-madison-chem-shops/mqtt-weather-station |
+| name             | url                                                                           |
+| ---------------- | ----------------------------------------------------------------------------- |
+| blaise           | https://git.blaise.zone/uw-madison-chem-shops/mqtt-weather-station.git/about/ |
+| Codeberg         | https://codeberg.org/uw-madison-chem-shops/mqtt-weather-station               |
+| GitHub (primary) | https://github.com/uw-madison-chem-shops/mqtt-weather-station                 |
+| GitLab           | https://gitlab.com/uw-madison-chem-shops/mqtt-weather-station                 |
 
 ## PCB
 
