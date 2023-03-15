@@ -56,10 +56,10 @@ cylinder(3, 0.13*inch, 0.13*inch, 8, center=false);
 translate([4*inch/2, 3*inch/2, 0])
 cylinder(3, 0.13*inch, 0.13*inch, 8, center=false);
 
-counterSunk([3*inch/2, 2*inch/2, 0], 0.056*inch);
-counterSunk([-3*inch/2, 2*inch/2, 0], 0.056*inch);
-counterSunk([3*inch/2, -2*inch/2, 0], 0.056*inch);
-counterSunk([-3*inch/2, -2*inch/2, 0], 0.056*inch);
+counterSunk([3*inch/2, 2*inch/2, 0], 0.06*inch);
+counterSunk([-3*inch/2, 2*inch/2, 0], 0.06*inch);
+counterSunk([3*inch/2, -2*inch/2, 0], 0.06*inch);
+counterSunk([-3*inch/2, -2*inch/2, 0], 0.06*inch);
 
 
 

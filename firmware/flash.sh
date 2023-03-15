@@ -10,8 +10,8 @@ sleep 5
 echo "putting files on device"
 ampy -p /dev/ttyUSB0 put main.py
 python -m mpy_cross settings.py
-ampy -p /dev/ttyUSB0 put settings.mpy
+ampy -p /dev/ttyUSB0 put settings.py
 python -m mpy_cross bme280.py
-ampy -p /dev/ttyUSB0 put bme280.mpy
+ampy -p /dev/ttyUSB0 put bme280.py
 read -p "reset device and press enter"
 echo "done!"
