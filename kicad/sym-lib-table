@@ -1,5 +1,7 @@
 (sym_lib_table
-  (lib (name CD4060BM96)(type Legacy)(uri ${KIPRJMOD}/symbols/CD4060BM96.lib)(options "")(descr ""))
-  (lib (name VXO7805-500-M)(type Legacy)(uri ${KIPRJMOD}/symbols/VXO7805-500-M.lib)(options "")(descr ""))
-  (lib (name weather)(type Legacy)(uri ${KIPRJMOD}/symbols/weather.lib)(options "")(descr ""))
+  (version 7)
+  (lib (name "CD4060BM96")(type "Legacy")(uri "${KIPRJMOD}/symbols/CD4060BM96.lib")(options "")(descr ""))
+  (lib (name "VXO7805-500-M")(type "Legacy")(uri "${KIPRJMOD}/symbols/VXO7805-500-M.lib")(options "")(descr ""))
+  (lib (name "weather")(type "Legacy")(uri "${KIPRJMOD}/symbols/weather.lib")(options "")(descr ""))
+  (lib (name "weather-rescue")(type "KiCad")(uri "${KIPRJMOD}/weather-rescue.kicad_sym")(options "")(descr ""))
 )
