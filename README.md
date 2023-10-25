@@ -46,7 +46,7 @@ PCB images generated with [tracespace](https://github.com/tracespace/tracespace)
 | R1, R2         | 1k               |
 | R3, R4, R7, R8 | 4.7k             |
 | R5             | 470k             |
-| R6, R9         | 1                |
+| R6, R9         | 1M               |
 | U1             | BME280 breakout  | Adafruit         | 2652                 | $20.00 | [Adafruit](https://www.adafruit.com/product/2652) [DigiKey]() |
 | U2             | counter          | TI               | CD4060BM96           | $0.50  |
 
